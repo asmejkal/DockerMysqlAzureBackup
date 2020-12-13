@@ -17,7 +17,8 @@ services:
         environment:
             - MYSQL_CONTAINER_NAME=server
             - MYSQL_DATABASE=my-database
-            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=password
             - BLOB_NAME=backup
             - CONTAINER=backups
             - AZURE_STORAGE_ACCOUNT=
