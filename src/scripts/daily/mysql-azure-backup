@@ -18,3 +18,5 @@ MUSER=root
 FILE=${BACKUP_FOLDER}/${BLOB_NAME}-${NOW}.sql.gz
 $MYSQLDUMP -h $MHOST -u $MUSER -p${MPASS} --databases $MDB | $GZIP -9 > $FILE
 $AZCLI storage blob upload $FILE $CONTAINER -c "DefaultEndpointsProtocol=https;BlobEndpoint=https://$AZURE_STORAGE_ACCOUNT.blob.core.windows.net/;AccountName=$AZURE_STORAGE_ACCOUNT;AccountKey=$AZURE_STORAGE_ACCESS_KEY"
+
+rm -f $FILE
