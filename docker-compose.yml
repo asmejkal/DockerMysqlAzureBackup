@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
     mysql:
-        image: mariadb:10.2.16
+        image: mariadb
         container_name: server
         ports:
             - "3306:3306"
@@ -22,5 +22,4 @@ services:
             - CONTAINER=backups
             - AZURE_STORAGE_ACCOUNT=
             - AZURE_STORAGE_ACCESS_KEY=
-        command: crond -f -d 8
         restart: always
