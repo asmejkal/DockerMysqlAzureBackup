@@ -23,4 +23,6 @@ services:
             - CONTAINER=backups
             - AZURE_STORAGE_ACCOUNT=
             - AZURE_STORAGE_ACCESS_KEY=
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
         restart: always

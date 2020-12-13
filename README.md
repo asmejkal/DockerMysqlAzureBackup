@@ -1,5 +1,5 @@
 # DockerMysqlAzureBackup
-Docker container for automated backups of a MySQL database to Azure Storage. Get on [Docker hub](https://hub.docker.com/r/smeykk/mysql-azure-backup).
+Docker container for automated daily backups of a MySQL database to Azure Storage. Get on [Docker hub](https://hub.docker.com/r/smeykk/mysql-azure-backup).
 
 ### Environment variables:
 - `MYSQL_CONTAINER_NAME` - The MySQL host
