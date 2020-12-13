@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+    mysql:
+        image: mariadb:10.2.16
+        container_name: server
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_DATABASE=my-database
+            - MYSQL_ROOT_PASSWORD=password
+        restart: always
+
+    mysql-azure-backup:
+        build: ./src
+        container_name: mysql-azure-backup
+        environment:
+            - MYSQL_CONTAINER_NAME=server
+            - MYSQL_DATABASE=my-database
+            - MYSQL_ROOT_PASSWORD=password
+            - BLOB_NAME=backup
+            - CONTAINER=backups
+            - AZURE_STORAGE_ACCOUNT=
+            - AZURE_STORAGE_ACCESS_KEY=
+        command: crond -f -d 8
+        restart: always
